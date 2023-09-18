@@ -31,13 +31,6 @@
 </head>
 
 <body>
-  <script>
-
-    $(document).ready(function () {
-      $("#my_audio").get(0).play();
-      $("#my_audio").prop("volume", 0).animate({ volume: 0.4 }, 6000);
-    })
-  </script>
   <audio id="my_audio" src="assets/sound/instrumen.mp3" loop="loop"></audio>
 
   <!-- ======= Header ======= -->
@@ -100,7 +93,7 @@
     <section id="about" class="section-bg">
       <div class="container-fluid" data-aos="fade-up">
         <div class="section-header">
-          <h3 class="section-title"><b>Tentang Sate Blora</b></h3>
+          <h3 class="section-title" id="tentangsateblora"><b>Tentang Sate Blora</b></h3>
           <span class="section-divider"></span>
           <p class="h5 section-description">
             Sate merupakan salah satu kuliner andalan di Indonesia. Ada beberapa daerah yang menjadikan sate sebagai
@@ -153,7 +146,7 @@
 
           <div class="col-lg-8 offset-lg-4">
             <div class="section-header">
-              <h1 class="h1"><b>Ada Apa di Dalam Seporsi Sate Blora?</b></h3>
+              <h1 id="bahansateblora" class="h1"><b>Ada Apa di Dalam Seporsi Sate Blora?</b></h3>
                 <span class="section-divider"></span>
             </div>
           </div>
@@ -226,7 +219,7 @@
                 src="assets/img/20230911_120038.jpg" alt="">
 
               <div>
-                <h2>Penjual Sate Blora</h2>
+                <h2 id="penjualsateblora">Penjual Sate Blora</h2>
                 <i class="bi bi-bar-chart"></i>
                 <p class="h5">Jumlah angkatan kerja di Kabupaten Blora tahun 2022 sebanyak <b>519,6 ribu orang</b>.</p>
                 <i class="bi bi-bar-chart"></i>
@@ -255,7 +248,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 class="section-title"><b>Harga Sate dan Kontribusinya untuk Pertumbuhan Ekonomi</b></h2>
+          <h2 id="kontribusisateblora" class="section-title"><b>Harga Sate dan Kontribusinya untuk Pertumbuhan Ekonomi</b></h2>
           <span class="section-divider"></span>
 
         </div>
@@ -452,10 +445,61 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <audio controls autoplay>
-    <source src="assets/sound/instrumen.ogg" type="audio/ogg">
-    <source src="assets/sound/instrumen.mp3" type="audio/mpeg">
-</audio>
+  <audio id="myAudioElement" loop  autoplay>
+    <source src="assets/sound/instrumen.mp3" type="audio/mp3">
+  </audio>
+
+  <audio  id="speak1"  autoplay>
+    <source src="assets/sound/speak1.mp4" type="audio/mp4">
+
+  </audio>
+  <audio  id="speak2"  autoplay>
+    <source src="assets/sound/speak2.mp4" type="audio/mp4">
+
+  </audio>
+  <audio  id="speak3"  autoplay>
+    <source src="assets/sound/speak3.mp4" type="audio/mp4">
+
+  </audio>
+  <audio  id="speak4"  autoplay>
+    <source src="assets/sound/speak4.mp4" type="audio/mp4">
+
+  </audio>
+  <script>
+
+    $(document).ready(function () {
+      $("body").hover(function () {
+        console.log(9)
+        // document.getElementById('myAudioElement').muted = true;
+        $("#myAudioElement")[0].play();
+
+      });
+      $("#tentangsateblora").hover(function () {
+        
+        // document.getElementById('myAudioElement').muted = true;
+        $("#speak2")[0].play();
+
+      });
+      $("#bahansateblora").hover(function () {
+        
+        // document.getElementById('myAudioElement').muted = true;
+        $("#speak1")[0].play();
+
+      });
+      $("#penjualsateblora").hover(function () {
+        
+        // document.getElementById('myAudioElement').muted = true;
+        $("#speak3")[0].play();
+
+      });
+      $("#kontribusisateblora").hover(function () {
+        // document.getElementById('myAudioElement').muted = true;
+        $("#speak4")[0].play();
+
+      });
+
+    })
+  </script>
 </body>
 
 </html>
